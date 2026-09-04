@@ -1,0 +1,124 @@
+// Zed settings
+//
+// Shared across macOS, Linux, and Windows by setup-zed-symlinks.
+{
+  "proxy": "",
+  "vim_mode": true,
+  "edit_predictions": {
+    "mode": "eager"
+  },
+  "git_panel": {
+    "group_by": "staging",
+    "tree_view": true,
+    "dock": "left"
+  },
+  "diff_view_style": "unified",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme"
+  },
+  "tabs": {
+    "file_icons": true
+  },
+  "agent": {
+    "show_turn_stats": true,
+    "thinking_display": "always_collapsed",
+    "single_file_review": true,
+    "default_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-sol",
+      "enable_thinking": true,
+      "effort": "high"
+    },
+    "expand_terminal_card": false,
+    "expand_edit_card": false,
+    "dock": "right",
+    "play_sound_when_agent_done": "always",
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true,
+    "anthropic_retention": false
+  },
+  "session": {
+    "trust_all_worktrees": false
+  },
+  "terminal": {
+    "font_size": 12.0,
+    "max_scroll_history_lines": 10000
+  },
+  "node": {
+    "npm_path": "pnpm"
+  },
+  "project_panel": {
+    "dock": "left",
+    "auto_fold_dirs": false
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "sticky_scroll": {
+    "enabled": false
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "cursor_shape": "bar",
+  "cursor_blink": false,
+  "colorize_brackets": true,
+  "show_edit_predictions": true,
+  "format_on_save": "on",
+  "tab_size": 2,
+  "agent_servers": {
+    "cursor": {
+      "default_config_options": {
+        "mode": "agent"
+      },
+      "type": "registry"
+    },
+    "codex-acp": {
+      "favorite_config_option_values": {
+        "reasoning_effort": [
+          "high"
+        ]
+      },
+      "default_config_options": {
+        "reasoning_effort": "high"
+      },
+      "type": "registry"
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "auto",
+        "model": "opus"
+      },
+      "type": "registry"
+    }
+  },
+  "auto_install_extensions": {
+    "angular": true,
+    "html": true,
+    "material-icon-theme": true,
+    "nvim-nightfox": true,
+    "scss": true,
+    "vscode-2026-theme": true,
+    "vscode-dark-modern": true,
+    "vscode-dark-siri-custom": true,
+    "vscode-modern": true
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "VSCode Dark Modern"
+  }
+}
+

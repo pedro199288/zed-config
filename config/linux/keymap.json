@@ -1,0 +1,66 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "j": "vim::Left",
+      "k": "vim::Down",
+      "l": "vim::Up",
+      "ñ": "vim::Right"
+    }
+  },
+  {
+    "context": "not_editing",
+    "bindings": {
+      "j": ["workspace::SendKeystrokes", "left"],
+      "k": ["workspace::SendKeystrokes", "down"],
+      "l": ["workspace::SendKeystrokes", "up"],
+      "ñ": ["workspace::SendKeystrokes", "right"]
+    }
+  },
+  {
+    "context": "VimControl && menu",
+    "bindings": {
+      "j": ["workspace::SendKeystrokes", "left"],
+      "k": ["workspace::SendKeystrokes", "down"],
+      "l": ["workspace::SendKeystrokes", "up"],
+      "ñ": ["workspace::SendKeystrokes", "right"]
+    }
+  },
+  {
+    "context": "AgentPanel || AcpThread || ThreadsSidebar || ThreadSwitcher",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-alt-down": "agents_sidebar::ToggleThreadSwitcher",
+      "ctrl-alt-up": [
+        "agents_sidebar::ToggleThreadSwitcher",
+        { "select_last": true }
+      ]
+    }
+  },
+  {
+    "context": "AgentPanel > Editor || AcpThread > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-alt-down": "agents_sidebar::ToggleThreadSwitcher",
+      "ctrl-alt-up": [
+        "agents_sidebar::ToggleThreadSwitcher",
+        { "select_last": true }
+      ]
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-ñ": "multi_workspace::ToggleWorkspaceSidebar",
+      "ctrl-alt-j": "pane::ActivatePreviousItem",
+      "ctrl-alt-ñ": "pane::ActivateNextItem",
+      "ctrl-alt-k": "agents_sidebar::ToggleThreadSwitcher",
+      "ctrl-alt-l": [
+        "agents_sidebar::ToggleThreadSwitcher",
+        { "select_last": true }
+      ],
+      "ctrl-r": "projects::OpenRecent",
+      "ctrl-`": "terminal_panel::ToggleFocus",
+      "ctrl-shift-g": "git_panel::ToggleFocus"
+    }
+  }
+]

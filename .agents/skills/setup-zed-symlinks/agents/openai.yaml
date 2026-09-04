@@ -1,0 +1,4 @@
+interface:
+  display_name: "Setup Zed Symlinks"
+  short_description: "Link this repository into Zed safely"
+  default_prompt: "Use $setup-zed-symlinks to configure this machine to use the repository’s Zed settings."
