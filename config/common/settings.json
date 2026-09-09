@@ -41,7 +41,7 @@
         "terminal": {
           "default": "confirm",
           "always_allow": [
-            { "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|file|stat|du|df|which|whereis|tree)\\b" },
+            { "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|diff|cmp|file|stat|du|df|which|whereis|tree)\\b" },
             { "pattern": "^git\\s+(status|log|diff|show|branch|blame|rev-parse|ls-files|remote)(\\s|$)" },
             { "pattern": "^(npm|pnpm|yarn|bun)\\s+(test|run|build|lint|typecheck|check)(\\s|$)" },
             { "pattern": "^cargo\\s+(build|test|check|fmt|clippy)(\\s|$)" },

@@ -50,6 +50,11 @@
   },
   {
     "bindings": {
+      "cmd-alt-down": "agents_sidebar::ToggleThreadSwitcher",
+      "cmd-alt-up": [
+        "agents_sidebar::ToggleThreadSwitcher",
+        { "select_last": true }
+      ],
       "cmd-ñ": "multi_workspace::ToggleWorkspaceSidebar",
       "cmd-alt-j": "pane::ActivatePreviousItem",
       "alt-cmd-ñ": "pane::ActivateNextItem",
