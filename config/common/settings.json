@@ -41,11 +41,12 @@
         "terminal": {
           "default": "confirm",
           "always_allow": [
-            { "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|diff|cmp|file|stat|du|df|which|whereis|tree)\\b" },
-            { "pattern": "^git\\s+(status|log|diff|show|branch|blame|rev-parse|ls-files|remote)(\\s|$)" },
+            { "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|diff|cmp|file|stat|du|df|which|whereis|readlink|realpath|tree)\\b" },
+            { "pattern": "^git\\s+(?:(?:--no-pager|--no-optional-locks)\\s+|-C\\s+(?:\\\"[^\\\"]*\\\"|'[^']*'|\\S+)\\s+)*(status|log|diff|show|branch|blame|rev-parse|ls-files|ls-tree|remote)(\\s|$)" },
             { "pattern": "^(npm|pnpm|yarn|bun)\\s+(test|run|build|lint|typecheck|check)(\\s|$)" },
             { "pattern": "^cargo\\s+(build|test|check|fmt|clippy)(\\s|$)" },
             { "pattern": "^go\\s+(build|test|vet|fmt)(\\s|$)" },
+            { "pattern": "^(python|python3)\\s+-m\\s+(pytest|unittest|compileall|mypy|ruff|json\\.tool)(\\s|$)" },
             { "pattern": "^(pytest|ruff|mypy|eslint|prettier|tsc)(\\s|$)" }
           ],
           "always_confirm": [
