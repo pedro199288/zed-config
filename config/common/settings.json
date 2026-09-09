@@ -22,6 +22,68 @@
     "file_icons": true
   },
   "agent": {
+    "sandbox_permissions": {
+      "network_hosts": [
+        "zed.dev"
+      ]
+    },
+    "tool_permissions": {
+      "default": "confirm",
+      "tools": {
+        "search_web": { "default": "allow" },
+        "fetch": {
+          "default": "allow",
+          "always_confirm": [
+            { "pattern": "(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0|\\[::1\\])" }
+          ]
+        },
+        "skill": { "default": "allow" },
+        "terminal": {
+          "default": "confirm",
+          "always_allow": [
+            { "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|file|stat|du|df|which|whereis|tree)\\b" },
+            { "pattern": "^git\\s+(status|log|diff|show|branch|blame|rev-parse|ls-files|remote)(\\s|$)" },
+            { "pattern": "^(npm|pnpm|yarn|bun)\\s+(test|run|build|lint|typecheck|check)(\\s|$)" },
+            { "pattern": "^cargo\\s+(build|test|check|fmt|clippy)(\\s|$)" },
+            { "pattern": "^go\\s+(build|test|vet|fmt)(\\s|$)" },
+            { "pattern": "^(pytest|ruff|mypy|eslint|prettier|tsc)(\\s|$)" }
+          ],
+          "always_confirm": [
+            { "pattern": "(^|[;&|]\\s*)sudo\\b" },
+            { "pattern": "\\bgit\\s+(push|commit|merge|rebase|reset|clean|checkout|switch|restore|tag)(\\s|$)" },
+            { "pattern": "\\b(npm|pnpm|yarn|bun)\\s+(publish|add|install|remove|uninstall|update|upgrade)(\\s|$)" },
+            { "pattern": "\\b(curl|wget|ssh|scp|rsync|nc|ncat)\\b" },
+            { "pattern": "\\b(rm|rmdir|mv|chmod|chown|kill|pkill|killall)\\b" }
+          ],
+          "always_deny": [
+            { "pattern": "(^|[ /])\\.env([. /]|$)" },
+            { "pattern": "(^|[ /])(secrets?|credentials?)([ /]|$)" },
+            { "pattern": "\\.(pem|key|p12|pfx)(\\s|$)" },
+            { "pattern": "\\brm\\s+[^;&|]*(--recursive|-[A-Za-z]*r[A-Za-z]*)[^;&|]*(/|~)(\\s|$)" }
+          ]
+        },
+        "edit_file": {
+          "default": "allow",
+          "always_deny": [
+            { "pattern": "(^|/)\\.env($|[./])" },
+            { "pattern": "(^|/)(secrets?|credentials?)(/|$)" },
+            { "pattern": "\\.(pem|key|p12|pfx)$" }
+          ]
+        },
+        "write_file": {
+          "default": "allow",
+          "always_deny": [
+            { "pattern": "(^|/)\\.env($|[./])" },
+            { "pattern": "(^|/)(secrets?|credentials?)(/|$)" },
+            { "pattern": "\\.(pem|key|p12|pfx)$" }
+          ]
+        },
+        "create_directory": { "default": "allow" },
+        "delete_path": { "default": "confirm" },
+        "move_path": { "default": "confirm" },
+        "copy_path": { "default": "confirm" }
+      }
+    },
     "show_turn_stats": true,
     "thinking_display": "always_collapsed",
     "single_file_review": true,
@@ -29,7 +91,7 @@
       "provider": "openai-subscribed",
       "model": "gpt-5.6-sol",
       "enable_thinking": true,
-      "effort": "high"
+      "effort": "low"
     },
     "expand_terminal_card": false,
     "expand_edit_card": false,
