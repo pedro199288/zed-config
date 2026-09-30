@@ -3,7 +3,7 @@
 // Shared across macOS, Linux, and Windows by setup-zed-symlinks.
 {
   "proxy": "",
-  "vim_mode": true,
+  "vim_mode": false,
   "edit_predictions": {
     "mode": "eager"
   },
@@ -41,13 +41,30 @@
         "terminal": {
           "default": "confirm",
           "always_allow": [
-            { "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|diff|cmp|file|stat|du|df|which|whereis|readlink|realpath|tree)\\b" },
-            { "pattern": "^git\\s+(?:(?:--no-pager|--no-optional-locks)\\s+|-C\\s+(?:\\\"[^\\\"]*\\\"|'[^']*'|\\S+)\\s+)*(status|log|diff|show|branch|blame|rev-parse|ls-files|ls-tree|remote)(\\s|$)" },
-            { "pattern": "^(npm|pnpm|yarn|bun)\\s+(test|run|build|lint|typecheck|check)(\\s|$)" },
-            { "pattern": "^cargo\\s+(build|test|check|fmt|clippy)(\\s|$)" },
-            { "pattern": "^go\\s+(build|test|vet|fmt)(\\s|$)" },
-            { "pattern": "^(python|python3)\\s+-m\\s+(pytest|unittest|compileall|mypy|ruff|json\\.tool)(\\s|$)" },
-            { "pattern": "^(pytest|ruff|mypy|eslint|prettier|tsc)(\\s|$)" }
+            {
+              "pattern": "^(pwd|ls|find|grep|rg|cat|bat|sed|awk|wc|sort|uniq|diff|cmp|file|stat|du|df|which|whereis|readlink|realpath|tree)\\b"
+            },
+            {
+              "pattern": "^git\\s+(?:(?:--no-pager|--no-optional-locks)\\s+|-C\\s+(?:\\\"[^\\\"]*\\\"|'[^']*'|\\S+)\\s+)*(status|log|diff|show|branch|blame|rev-parse|ls-files|ls-tree|remote)(\\s|$)"
+            },
+            {
+              "pattern": "^(npm|pnpm|yarn|bun)\\s+(test|run|build|lint|typecheck|check)(\\s|$)"
+            },
+            {
+              "pattern": "^cargo\\s+(build|test|check|fmt|clippy)(\\s|$)"
+            },
+            {
+              "pattern": "^go\\s+(build|test|vet|fmt)(\\s|$)"
+            },
+            {
+              "pattern": "^(python|python3)\\s+-m\\s+(pytest|unittest|compileall|mypy|ruff|json\\.tool)(\\s|$)"
+            },
+            {
+              "pattern": "^(pytest|ruff|mypy|eslint|prettier|tsc)(\\s|$)"
+            },
+            {
+              "pattern": "^NG_BUILD_MAX_WORKERS=1\\s+npm\\s+run(\\s|$)"
+            }
           ],
           "always_confirm": [
             { "pattern": "(^|[;&|]\\s*)sudo\\b" },
@@ -92,7 +109,7 @@
       "provider": "openai-subscribed",
       "model": "gpt-5.6-sol",
       "enable_thinking": true,
-      "effort": "low"
+      "effort": "medium"
     },
     "expand_terminal_card": false,
     "expand_edit_card": false,
